@@ -161,6 +161,10 @@ const markdownOptions: DropdownOption[] = [
 const imageOptionsByTheme: { [id: string]: DropdownOption[] } = {
   light: [
     {
+      text: "Tomy",
+      value: "https://tomy.me/tomy-circle-white.png",
+    },
+    {
       text: "Vercel",
       value:
         "https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-black.svg",
@@ -178,6 +182,10 @@ const imageOptionsByTheme: { [id: string]: DropdownOption[] } = {
   ],
   dark: [
     {
+      text: "Tomy",
+      value: "https://tomy.me/tomy-circle-white.png",
+    },
+    {
       text: "Vercel",
       value:
         "https://assets.vercel.com/image/upload/front/assets/design/vercel-triangle-white.svg",
@@ -194,6 +202,10 @@ const imageOptionsByTheme: { [id: string]: DropdownOption[] } = {
     },
   ],
   dracula: [
+    {
+      text: "Tomy",
+      value: "https://tomy.me/tomy-circle-white.png",
+    },
     {
       text: "Vercel",
       value:
