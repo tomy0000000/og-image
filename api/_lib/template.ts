@@ -17,15 +17,29 @@ const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString(
 );
 
 function getCss(theme: string, fontSize: string) {
-  let background = "white";
-  let foreground = "black";
-  let radial = "lightgray";
+  let background, foreground, codeColor;
 
-  if (theme === "dark") {
-    background = "black";
-    foreground = "white";
-    radial = "dimgray";
+  switch (theme) {
+    case "dark":
+      background =
+        "radial-gradient(circle at 25px 25px, dimgray 2%, transparent 0%) 0% 0%/100px 100px, radial-gradient(circle at 75px 75px, dimgray 2%, transparent 0%) 0% 0%/100px 100px black";
+      foreground = "white";
+      codeColor = "#D400FF";
+      break;
+    case "dracula":
+      background =
+        "radial-gradient(#22212C, transparent), url(https://og-image.tomy.tech/dracula_background.png)";
+      foreground = "white";
+      codeColor = "#9580FF";
+      break;
+    default:
+      background =
+        "radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%) 0% 0%/100px 100px, radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%) 0% 0%/100px 100px white";
+      foreground = "black";
+      codeColor = "#D400FF";
+      break;
   }
+
   return `
     @font-face {
         font-family: 'Inter';
@@ -50,8 +64,6 @@ function getCss(theme: string, fontSize: string) {
 
     body {
         background: ${background};
-        background-image: radial-gradient(circle at 25px 25px, ${radial} 2%, transparent 0%), radial-gradient(circle at 75px 75px, ${radial} 2%, transparent 0%);
-        background-size: 100px 100px;
         height: 100vh;
         display: flex;
         text-align: center;
@@ -60,7 +72,7 @@ function getCss(theme: string, fontSize: string) {
     }
 
     code {
-        color: #D400FF;
+        color: ${codeColor};
         font-family: 'Vera';
         white-space: pre-wrap;
         letter-spacing: -5px;
