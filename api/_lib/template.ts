@@ -41,6 +41,8 @@ function getCss(theme: string, fontSize: string) {
   }
 
   return `
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
     @font-face {
         font-family: 'Inter';
         font-style:  normal;
@@ -112,7 +114,7 @@ function getCss(theme: string, fontSize: string) {
     }
     
     .heading {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Noto Sans TC', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: ${foreground};
