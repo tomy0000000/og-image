@@ -3,7 +3,11 @@ import { marked } from "marked";
 import { sanitizeHtml } from "./sanitizer";
 import { ParsedRequest } from "./types";
 const twemoji = require("twemoji");
-const twOptions = { folder: "svg", ext: ".svg" };
+const twOptions = {
+  folder: "svg",
+  ext: ".svg",
+  base: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/",
+};
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 const rglr = readFileSync(
